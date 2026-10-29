@@ -1,0 +1,13 @@
+{
+  "name": "air-quality-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A beginner-friendly air-quality dashboard for India",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
