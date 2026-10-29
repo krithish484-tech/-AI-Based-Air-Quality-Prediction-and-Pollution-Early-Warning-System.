@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air Quality System</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">India air quality dashboard</p>
+          <h1>Air Quality System</h1>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel search-panel">
+          <h2>Find a place</h2>
+          <form id="search-form" class="search-form">
+            <label class="sr-only" for="location">Location</label>
+            <input
+              id="location"
+              name="location"
+              type="text"
+              value="Delhi"
+              placeholder="Search city or district in India"
+              autocomplete="off"
+            />
+            <button type="submit">Search</button>
+          </form>
+
+          <div id="status" class="status" aria-live="polite"></div>
+
+          <div class="meta-block">
+            <h3>Selected location</h3>
+            <p id="selected-location">Waiting for a search…</p>
+          </div>
+        </section>
+
+        <section class="panel overview-panel">
+          <h2>Current conditions</h2>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span class="label">PM2.5</span>
+              <strong id="pm25-value">—</strong>
+              <small id="pm25-unit">µg/m³</small>
+            </article>
+            <article class="stat-card">
+              <span class="label">PM10</span>
+              <strong id="pm10-value">—</strong>
+              <small id="pm10-unit">µg/m³</small>
+            </article>
+            <article class="stat-card">
+              <span class="label">Updated</span>
+              <strong id="updated-value">—</strong>
+              <small>Local time</small>
+            </article>
+            <article class="stat-card">
+              <span class="label">Source</span>
+              <strong id="source-value">Open-Meteo</strong>
+              <small>Model estimate</small>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel forecast-panel">
+          <h2>Next 24 hours</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>PM2.5</th>
+                  <th>PM10</th>
+                </tr>
+              </thead>
+              <tbody id="forecast-body">
+                <tr>
+                  <td colspan="3">No forecast data yet.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel stations-panel">
+          <h2>Monitoring stations</h2>
+          <div id="stations" class="stations-list">
+            <p>Station data will appear here if an OpenAQ key is configured.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
